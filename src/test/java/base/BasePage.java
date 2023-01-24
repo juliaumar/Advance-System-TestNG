@@ -16,6 +16,8 @@ public class BasePage {
     }
 
 
+
+
     public void sleep(Long milliSeconds){
         try{
             Thread.sleep(milliSeconds);
@@ -29,6 +31,20 @@ public class BasePage {
         moveIntoView(element);
         highlightElement(element);
         element.click();
+    }
+    public  void isDisplayed(WebElement element){
+        waitForElementClickability(element);
+        moveIntoView(element);
+        highlightElement(element);
+        element.isDisplayed();
+
+    }
+    public  void isEnabled(WebElement element){
+        waitForElementClickability(element);
+        moveIntoView(element);
+        highlightElement(element);
+        element.isEnabled();
+
     }
 
     public void sendKeys(WebElement element, String inputText){

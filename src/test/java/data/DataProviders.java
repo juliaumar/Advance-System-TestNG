@@ -6,9 +6,21 @@ public class DataProviders {
 
     @DataProvider(name = "nav buttons")
     public Object[] data() {
-        Object[] navBtns = new String[]{"HOME", "ABOUT US ", "SERVICES", "JOIN US", "CONTACT US",};
+        Object[] navBtns = new String[]{"HOME", "ABOUT US ", "SERVICES","CLIENTS", "JOIN US", "CONTACT US",};
 
         return navBtns;
+    }
+    @DataProvider(name = "navLinks")
+
+    public Object[][] dataValid() {
+        Object[][] navLinks = new Object[1][6];
+        navLinks[0][0] = "HOME";
+        navLinks[0][1] = "ABOUT US";
+        navLinks[0][2]= "SERVICES";
+        navLinks[0][3]= "CLIENTS";
+        navLinks[0][4]= "JOIN US";
+        navLinks[0][5]= "CONTACT US";
+        return navLinks;
     }
 }
 

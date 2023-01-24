@@ -3,7 +3,7 @@ package utils;
 
 public class Util {
 
-    // Valid account for login
+    // Valid credentials for login
     public static final String USER_NAME = "";
     public static final String PASSWD = "";
 
