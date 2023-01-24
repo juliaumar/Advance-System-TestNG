@@ -9,12 +9,12 @@ import pages.HomePage;
 
 public class HomeTest extends BaseTest implements CommonPage {
 
-    HomePage testPage;
+    HomePage homePage;
 
 
     @BeforeMethod
     public void localSetUp() {
-        testPage = new HomePage(getDriver());
+        homePage = new HomePage(getDriver());
 
     }
 
