@@ -1,2 +1,4 @@
-package data;public class DataProviders {
+package data;
+
+public class DataProviders {
 }
