@@ -20,5 +20,9 @@ public class HomePage extends BasePage {
     public WebElement joinNowBtn;
 
 
+    @FindBy(xpath = "//div[@class='nav-outer clearfix']//nav[@class='main-menu']//div[@class='navbar-collapse collapse clearfix']//ul//a")
+    public List<WebElement> links;
+
+
 
 }

@@ -1,7 +1,11 @@
 package tests;
 
 import base.BaseTest;
+
 import org.testng.Assert;
+
+import org.openqa.selenium.WebElement;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.CommonPage;
@@ -24,13 +28,24 @@ public class HomeTest extends BaseTest  {
         Assert.assertTrue(homePage.joinNowBtn.isEnabled());
 
     }
+
     @Test
-    public void test02(){
+    public void test02() {
         Assert.assertTrue(homePage.joinNowBtn.isDisplayed());
+    }
+
+    @Test(testName = "navBar links")
+    public void test03(){
+        for (WebElement link: homePage.links) {
+            homePage.isDisplayed(link);
+
+        }
+    }
+
 
     }
 
-}
+
 
 
 
