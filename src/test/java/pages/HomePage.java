@@ -16,6 +16,9 @@ public class HomePage extends BasePage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+    @FindBy(xpath = "//a[text()='Join Now']")
+    public WebElement joinNowBtn;
+
 
 
 }
