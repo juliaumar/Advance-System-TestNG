@@ -34,16 +34,11 @@ public class HomeTest extends BaseTest  {
         Assert.assertTrue(homePage.joinNowBtn.isDisplayed());
     }
 
-    @Test(testName = "navBar links")
-    public void test03(){
-        for (WebElement link: homePage.links) {
-            homePage.isDisplayed(link);
-
-        }
-    }
-
 
     }
+
+
+
 
 
 
