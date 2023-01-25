@@ -9,7 +9,7 @@ import pages.HomePage;
 
 
 
-public class HomeTest extends BaseTest implements CommonPage {
+public class HomeTest extends BaseTest  {
 
     HomePage homePage;
 
