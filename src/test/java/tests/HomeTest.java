@@ -12,8 +12,7 @@ import pages.CommonPage;
 import pages.HomePage;
 
 
-
-public class HomeTest extends BaseTest  {
+public class HomeTest extends BaseTest {
 
     HomePage homePage;
 
@@ -23,8 +22,9 @@ public class HomeTest extends BaseTest  {
         homePage = new HomePage(getDriver());
 
     }
+
     @Test
-    public void test01(){
+    public void test01() {
         Assert.assertTrue(homePage.joinNowBtn.isEnabled());
 
     }
@@ -35,7 +35,7 @@ public class HomeTest extends BaseTest  {
     }
 
 
-    }
+}
 
 
 
