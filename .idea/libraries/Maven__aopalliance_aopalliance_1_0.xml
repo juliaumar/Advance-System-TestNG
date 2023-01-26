@@ -2,7 +2,6 @@
   <library name="Maven: aopalliance:aopalliance:1.0">
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/" />
-      <root url="file://$PROJECT_DIR$/../Selenium/libs/commons-io-2.11.0" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0-javadoc.jar!/" />
@@ -12,7 +11,6 @@
       <root url="jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar!/" />
       <root url="file://$PROJECT_DIR$/../Selenium/libs/commons-io-2.11.0" />
     </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/../Selenium/libs/commons-io-2.11.0" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/../Selenium/libs/commons-io-2.11.0" recursive="false" type="SOURCES" />
   </library>
 </component>
