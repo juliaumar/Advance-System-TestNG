@@ -16,8 +16,11 @@ public class HomePage extends BasePage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    @FindBy(xpath = "//div[@class='nav-outer clearfix']//nav[@class='main-menu']//div[@class='navbar-collapse collapse clearfix']//ul//a")
-    public List<WebElement> links;
+  //  @FindBy(xpath = "//div[@class='nav-outer clearfix']//nav[@class='main-menu']//div[@class='navbar-collapse collapse clearfix']//ul//a")
+  //  public List<WebElement> links;
+
+    @FindBy(xpath = "//a[text()='Join Now']")
+    public WebElement joinNowBtn;
 
 
 }

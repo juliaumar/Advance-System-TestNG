@@ -22,13 +22,23 @@ public class HomeTest extends BaseTest implements CommonPage {
         homePage = new HomePage(getDriver());
 
     }
-    @Test(testName = "navBar links")
-    public void test01(){
+    @Test
+    public void test01() {
+        Assert.assertTrue(homePage.joinNowBtn.isEnabled());
+
+    }
+
+    @Test
+    public void test02() {
+        Assert.assertTrue(homePage.joinNowBtn.isDisplayed());
+    }
+  /*  @Test(testName = "navBar links")
+   public void test01(){
         for (WebElement link: homePage.links) {
             homePage.isDisplayed(link);
 
         }
-    }
+    }*/
 
 
 
