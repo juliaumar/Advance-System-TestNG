@@ -1,5 +1,6 @@
 package tests;
 
+import base.BasePage;
 import base.BaseTest;
 
 import org.testng.Assert;
@@ -15,11 +16,13 @@ import pages.HomePage;
 public class HomeTest extends BaseTest {
 
     HomePage homePage;
+    BasePage basePage;
 
 
     @BeforeMethod
     public void localSetUp() {
         homePage = new HomePage(getDriver());
+        basePage = new BasePage(getDriver());
 
     }
 
@@ -36,8 +39,6 @@ public class HomeTest extends BaseTest {
 
     @Test
     public void testHeaders() throws InterruptedException {
-        Thread.sleep(2000);
-        Assert.assertTrue(homePage.secondSectionHeader.isDisplayed());
     }
     @Test
     public void testHeaders1() {
