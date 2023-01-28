@@ -36,7 +36,7 @@ public class HomeTest extends BaseTest {
     public void test02() {
         Assert.assertTrue(homePage.joinNowBtn.isDisplayed());
     }
-    @Test(testName = "Verify JOIN NOW button is above the main content")
+    @Test(testName = "ASTF-5-01: Verify JOIN NOW button is above the main content")
     public void test03(){
         Point joinBtnLo = homePage.joinNowBtn.getLocation();
         Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
@@ -48,15 +48,16 @@ public class HomeTest extends BaseTest {
         Assert.assertTrue(joinBtnLo.getX() < socialMediaLinkLo.getX());
         
     }
-    @Test(testName = "JOIN NOW button should take the user to “Join Us")
+    @Test(testName = "ASTF-5-02: JOIN NOW button should take the user to “Join Us")
     public void test04(){
         String joinUsTitle = "Advance Systems - Join Us";
 
-        homePage.joinNowBtn.click();
+        homePage.click(homePage.joinNowBtn);
         SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
 
         Assert.assertEquals(joinUsTitle, getDriver().getTitle());
     }
+
 
 }
 
