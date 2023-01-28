@@ -39,29 +39,26 @@ public class HomeTest extends BaseTest {
         Assert.assertTrue(homePage.joinNowBtn.isDisplayed());
 
     }
-    @Test(testName = "Parallax Section")
-    public void test03(){
+    @Test(testName = "ASTF-3 Parallax Section")
+    public void test03() {
         homePage.isDisplayed(homePage.header1);
         homePage.isDisplayed(homePage.text1);
         Actions at = new Actions(getDriver());
         at.sendKeys(Keys.PAGE_UP).build().perform();
         homePage.click(homePage.readMoreBtn);
-        Assert.assertEquals( getDriver().getTitle(), "Advance Systems - Services");
-        Screenshot.takeScreenshot(getDriver());
-        getDriver().navigate().back();
+        Assert.assertEquals(getDriver().getTitle(), "Advance Systems - Services");
+    }
+
+    @Test(testName = "ASTF-3 Parallax Section 2")
+    public void test04() {
+        Actions at = new Actions(getDriver());
         homePage.waitForElementClickability(homePage.header2);
         homePage.isDisplayed(homePage.header2);
         Screenshot.takeScreenshot(getDriver());
         homePage.isDisplayed(homePage.text2);
         at.sendKeys(Keys.PAGE_UP).build().perform();
         homePage.click(homePage.readMoreBtn2);
-
-
-
-
-
     }
-
 
 }
 
