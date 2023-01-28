@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.CommonPage;
 import pages.HomePage;
+import utils.SeleniumUtils;
 
 
 public class HomeTest extends BaseTest {
@@ -35,13 +36,26 @@ public class HomeTest extends BaseTest {
     public void test02() {
         Assert.assertTrue(homePage.joinNowBtn.isDisplayed());
     }
-    @Test
+    @Test(testName = "Verify JOIN NOW button is above the main content")
     public void test03(){
         Point joinBtnLo = homePage.joinNowBtn.getLocation();
         Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
         System.out.println(joinBtnLo);
         System.out.println(socialMediaLinkLo);
+        System.out.println(joinBtnLo.getX());
+        System.out.println(socialMediaLinkLo.getX());
+
+        Assert.assertTrue(joinBtnLo.getX() < socialMediaLinkLo.getX());
         
+    }
+    @Test(testName = "JOIN NOW button should take the user to “Join Us")
+    public void test04(){
+        String joinUsTitle = "Advance Systems - Join Us";
+
+        homePage.joinNowBtn.click();
+        SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
+
+        Assert.assertEquals(joinUsTitle, getDriver().getTitle());
     }
 
 }
