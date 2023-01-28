@@ -19,6 +19,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[text()='Join Now']")
     public WebElement joinNowBtn;
 
+    @FindBy(xpath = "//a/i[@class='fa fa-facebook-square']")
+    public WebElement socialMediaLink;
+
 
 
 

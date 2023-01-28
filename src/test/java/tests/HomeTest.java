@@ -2,6 +2,8 @@ package tests;
 
 import base.BaseTest;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import org.openqa.selenium.Point;
 import org.testng.Assert;
 
 import org.openqa.selenium.WebElement;
@@ -33,7 +35,14 @@ public class HomeTest extends BaseTest {
     public void test02() {
         Assert.assertTrue(homePage.joinNowBtn.isDisplayed());
     }
-
+    @Test
+    public void test03(){
+        Point joinBtnLo = homePage.joinNowBtn.getLocation();
+        Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
+        System.out.println(joinBtnLo);
+        System.out.println(socialMediaLinkLo);
+        
+    }
 
 }
 
