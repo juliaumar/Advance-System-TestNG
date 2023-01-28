@@ -34,6 +34,20 @@ public class HomeTest extends BaseTest {
         Assert.assertTrue(homePage.joinNowBtn.isDisplayed());
     }
 
+    @Test
+    public void testHeaders() throws InterruptedException {
+        Thread.sleep(2000);
+        Assert.assertTrue(homePage.secondSectionHeader.isDisplayed());
+    }
+    @Test
+    public void testHeaders1() {
+        Assert.assertTrue(homePage.secondSectionHeader1.isDisplayed());
+    }
+    @Test
+    public void testHeaders2() {
+        Assert.assertTrue(homePage.secondSectionHeader2.isDisplayed());
+    }
+
 
 }
 
