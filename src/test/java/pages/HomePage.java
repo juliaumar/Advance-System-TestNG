@@ -19,8 +19,11 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[text()='Join Now']")
     public WebElement joinNowBtn;
 
-
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/header[1]/div[4]/div[1]/div[2]/nav[1]/div[2]/ul[1]/li")
+    public List<WebElement> secondNavBarBtns;
 
 
 
 }
+
+
