@@ -19,6 +19,7 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[text()='Join Now']")
     public WebElement joinNowBtn;
 
+
     @FindBy(xpath = "//section[@class='services-section']//div[@class='sec-title centered']")
     public WebElement secondSectionHeader;
 
@@ -28,6 +29,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//section[@class='services-section']//div[@class='text']//p")
     public WebElement secondSectionHeader2;
 
+
+    @FindBy(xpath = "//a/i[@class='fa fa-facebook-square']")
+    public WebElement socialMediaLink;
 
 
 
