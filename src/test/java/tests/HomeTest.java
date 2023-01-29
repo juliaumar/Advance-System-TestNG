@@ -3,11 +3,13 @@ package tests;
 import base.BasePage;
 import base.BaseTest;
 
+import data.DataProviders;
 import org.testng.Assert;
 
 import org.openqa.selenium.WebElement;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.CommonPage;
 import pages.HomePage;
@@ -16,13 +18,11 @@ import pages.HomePage;
 public class HomeTest extends BaseTest {
 
     HomePage homePage;
-    BasePage basePage;
 
 
     @BeforeMethod
     public void localSetUp() {
         homePage = new HomePage(getDriver());
-        basePage = new BasePage(getDriver());
 
     }
 
@@ -39,6 +39,8 @@ public class HomeTest extends BaseTest {
 
     @Test
     public void testHeaders() throws InterruptedException {
+        Thread.sleep(2000);
+        Assert.assertTrue(homePage.secondSectionHeader.isDisplayed());
     }
     @Test
     public void testHeaders1() {
@@ -48,25 +50,4 @@ public class HomeTest extends BaseTest {
     public void testHeaders2() {
         Assert.assertTrue(homePage.secondSectionHeader2.isDisplayed());
     }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
