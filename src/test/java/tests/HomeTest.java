@@ -9,9 +9,11 @@ import org.testng.Assert;
 import org.openqa.selenium.WebElement;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.CommonPage;
 import pages.HomePage;
+import utils.Screenshot;
 import utils.SeleniumUtils;
 
 
@@ -57,7 +59,13 @@ public class HomeTest extends BaseTest {
 
         Assert.assertEquals(joinUsTitle, getDriver().getTitle());
     }
+    @Test(testName = "ASTF-12: Verify if footer quick links link to correct pages", dataProviderClass = DataProvider.class, dataProvider = "quickLinks")
+    public void test05(String quickLinkName){
 
+        SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
+        System.out.println(getDriver().getTitle());
+        Screenshot.takeScreenshot(getDriver());
+    }
 
 }
 
