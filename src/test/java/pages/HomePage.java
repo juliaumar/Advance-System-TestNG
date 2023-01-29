@@ -29,9 +29,9 @@ public class HomePage extends BasePage {
     public List<WebElement> footerQuickLinks;
 
 
-    public boolean doesStatementExist(String statement){
+    public boolean quickLinks(String quickLink){
         for(WebElement element: footerQuickLinks){
-            if (getText(element).equalsIgnoreCase(statement))
+            if (getText(element).equalsIgnoreCase(quickLink))
                 return true;
         }
         return false;
