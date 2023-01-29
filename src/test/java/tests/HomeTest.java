@@ -2,16 +2,17 @@ package tests;
 
 import base.BaseTest;
 
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.Point;
 import org.testng.Assert;
-
 import org.openqa.selenium.WebElement;
-
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.CommonPage;
 import pages.HomePage;
+import utils.SeleniumUtils;
 
 import javax.swing.*;
 
@@ -37,19 +38,40 @@ public class HomeTest extends BaseTest {
     public void test02() {
         Assert.assertTrue(homePage.joinNowBtn.isDisplayed());
     }
-    @Test(testName = "ASTF-6 Second  Page Navigation Bar")
-    public void testASTF6(){
-        Actions action = new Actions(getDriver());
-        action.sendKeys(Keys.PAGE_DOWN).build().perform();
-        for (WebElement Btn: homePage.secondNavBarBtns) {
-            homePage.isDisplayed(Btn);
+    @Test(testName = "ASTF-5-01: Verify JOIN NOW button is above the main content")
+    public void test03(){
+            Point joinBtnLo = homePage.joinNowBtn.getLocation();
+            Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
+            System.out.println(joinBtnLo);
+            System.out.println(socialMediaLinkLo);
+            System.out.println(joinBtnLo.getX());
+            System.out.println(socialMediaLinkLo.getX());
+
+            Assert.assertTrue(joinBtnLo.getX() < socialMediaLinkLo.getX());
 
         }
+     @Test(testName = "ASTF-5-02: JOIN NOW button should take the user to “Join Us")
+        public void test04(){
+            String joinUsTitle = "Advance Systems - Join Us";
+
+            homePage.click(homePage.joinNowBtn);
+            SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
+
+            Assert.assertEquals(joinUsTitle, getDriver().getTitle());
+
+        }
+        @Test(testName = "ASTF-6 Second  Page Navigation Bar")
+        public void testASTF6() {
+            Actions action = new Actions(getDriver());
+            action.sendKeys(Keys.PAGE_DOWN).build().perform();
+            for (WebElement Btn : homePage.secondNavBarBtns) {
+                homePage.isDisplayed(Btn);
+
+            }
 
     }
-
-
 }
+
 
 
 
