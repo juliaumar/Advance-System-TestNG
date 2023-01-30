@@ -26,6 +26,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a/i[@class='fa fa-facebook-square']")
     public WebElement socialMediaLink;
 
+    @FindBy(xpath = "//footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li")
+    public List<WebElement> footerInfos;
+
 
 
 
