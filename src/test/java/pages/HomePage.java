@@ -23,6 +23,11 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//h2[normalize-space()='A bright career iswaiting for you...']")
     public WebElement header1;
 
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/header[1]/div[4]/div[1]/div[2]/nav[1]/div[2]/ul[1]/li")
+    public List<WebElement> secondNavBarBtns;
+
+
     @FindBy(xpath = "//a/i[@class='fa fa-facebook-square']")
     public WebElement socialMediaLink;
 
@@ -51,4 +56,9 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//section[contains (@class,'testimonial')]//div[contains (@class,'active')]")
     public List<WebElement> TextNameState;
+
+
+
 }
+
+

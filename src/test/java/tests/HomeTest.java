@@ -9,8 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
-import utils.Screenshot;
 import utils.SeleniumUtils;
+
 
 public class HomeTest extends BaseTest {
 
@@ -81,6 +81,17 @@ public class HomeTest extends BaseTest {
 
 
         }
+
+    }
+        @Test(testName = "ASTF-6 Second  Page Navigation Bar")
+        public void testASTF6() {
+            Actions action = new Actions(getDriver());
+            action.sendKeys(Keys.PAGE_DOWN).build().perform();
+            for (WebElement Btn : homePage.secondNavBarBtns) {
+                homePage.isDisplayed(Btn);
+
+            }
+
 
     }
 }
