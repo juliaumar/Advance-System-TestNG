@@ -84,6 +84,22 @@ public class HomeTest extends BaseTest {
         Assert.assertEquals(getDriver().getTitle(), title);
     }
 
+
+    @Test
+    public void testHeaders() throws InterruptedException {
+        Thread.sleep(2000);
+        Assert.assertTrue(homePage.secondSectionHeader.isDisplayed());
+    }
+    @Test
+    public void testHeaders1() {
+        Assert.assertTrue(homePage.secondSectionHeader1.isDisplayed());
+    }
+    @Test
+    public void testHeaders2() {
+        Assert.assertTrue(homePage.secondSectionHeader2.isDisplayed());
+    }
+
+
     @Test(testName = "ASTF-3 Parallax Section 2")
     public void test06() {
         Actions at = new Actions(getDriver());
