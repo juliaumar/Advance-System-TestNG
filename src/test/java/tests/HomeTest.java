@@ -3,6 +3,8 @@ package tests;
 import base.BaseTest;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import data.DataProviders;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Point;
 import org.testng.Assert;
 
@@ -59,12 +61,13 @@ public class HomeTest extends BaseTest {
 
         Assert.assertEquals(joinUsTitle, getDriver().getTitle());
     }
-    @Test(testName = "ASTF-12: Verify if footer quick links link to correct pages", dataProviderClass = DataProvider.class, dataProvider = "quickLinks")
-    public void test05(String quickLinkName){
+    @Test(testName = "ASTF-12: Verify if footer quick links link to correct pages", dataProviderClass = DataProviders.class, dataProvider = "quickLinks")
+    public void test05(String linkName, String title) {
 
-        SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
-        System.out.println(getDriver().getTitle());
-        Screenshot.takeScreenshot(getDriver());
+        getDriver().findElement(By.linkText(linkName)).click();
+        SeleniumUtils.switchToNextWindow(getDriver());
+        homePage.sleep(1000L);
+        Assert.assertEquals(getDriver().getTitle(), title);
     }
 
 }

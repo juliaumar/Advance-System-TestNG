@@ -24,18 +24,11 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//a/i[@class='fa fa-facebook-square']")
     public WebElement socialMediaLink;
+////div[@class='col-md-6 col-sm-12']//ul//li/a/i
 
-    @FindBy(xpath = "//div[@class='col-md-6 col-sm-12']//ul")
+    @FindBy(xpath = "(//a[@href='index.html'][text()='\" + linkText + \"'])[4]")
     public List<WebElement> footerQuickLinks;
 
-
-    public boolean quickLinks(String quickLink){
-        for(WebElement element: footerQuickLinks){
-            if (getText(element).equalsIgnoreCase(quickLink))
-                return true;
-        }
-        return false;
-    }
 
 
 }
