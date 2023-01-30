@@ -45,4 +45,10 @@ public class HomePage extends BasePage {
     //julia Parallax Section
     @FindBy(xpath = "//ul[1]/li[2]/div[4]/div[1]/div[1]/div[1]/a[1]")
     public WebElement readMoreBtn2;
+
+    @FindBy(xpath = "//h2[normalize-space()='Words from our Clients']")
+    public WebElement wordsFromOurClient;
+
+    @FindBy(xpath = "//section[contains (@class,'testimonial')]//div[contains (@class,'active')]")
+    public List<WebElement> TextNameState;
 }
