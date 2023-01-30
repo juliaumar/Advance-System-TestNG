@@ -2,20 +2,17 @@ package tests;
 
 import base.BaseTest;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import utils.SeleniumUtils;
 
-
 public class HomeTest extends BaseTest {
-
     HomePage homePage;
-
 
     @BeforeMethod
     public void localSetUp() {
@@ -51,6 +48,7 @@ public class HomeTest extends BaseTest {
         System.out.println(socialMediaLinkLo);
         System.out.println(joinBtnLo.getX());
         System.out.println(socialMediaLinkLo.getX());
+
         Assert.assertTrue(joinBtnLo.getX() < socialMediaLinkLo.getX());
 
     }
@@ -63,15 +61,32 @@ public class HomeTest extends BaseTest {
         Assert.assertEquals(joinUsTitle, getDriver().getTitle());
     }
 
-    @Test(testName = "ASTF-3 Parallax Section 2")
+    @Test
     public void test06() {
+        Point joinBtnLo = homePage.joinNowBtn.getLocation();
+        Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
+        System.out.println(joinBtnLo);
+        System.out.println(socialMediaLinkLo);
+        System.out.println(joinBtnLo.getX());
+        System.out.println(socialMediaLinkLo.getX());
+
+
+        Assert.assertTrue(joinBtnLo.getX() < socialMediaLinkLo.getX());
+
+    }
+
+
+    @Test(testName = "ASTF-3 Parallax Section 2")
+    public void test07() {
         Actions at = new Actions(getDriver());
         homePage.waitForElementClickability(homePage.header2);
         homePage.isDisplayed(homePage.header2);
         homePage.isDisplayed(homePage.text2);
         at.sendKeys(Keys.PAGE_UP).build().perform();
         homePage.click(homePage.readMoreBtn2);
+
     }
+
     @Test(testName = "ASTF-9 Testimonials")
     public void test9Testimonials() {
         homePage.isDisplayed(homePage.wordsFromOurClient);
@@ -83,18 +98,46 @@ public class HomeTest extends BaseTest {
         }
 
     }
-        @Test(testName = "ASTF-6 Second  Page Navigation Bar")
-        public void testASTF6() {
-            Actions action = new Actions(getDriver());
-            action.sendKeys(Keys.PAGE_DOWN).build().perform();
-            for (WebElement Btn : homePage.secondNavBarBtns) {
-                homePage.isDisplayed(Btn);
 
-            }
+    @Test(testName = "ASTF-6 Second  Page Navigation Bar")
+    public void testASTF6() {
 
+        Actions action = new Actions(getDriver());
+        action.sendKeys(Keys.PAGE_DOWN).build().perform();
+        for (WebElement Btn : homePage.secondNavBarBtns) {
+            homePage.isDisplayed(Btn);
+
+
+        }
+    }
+
+    @Test(testName = "ASTF-11 Footer Info Display")
+    public void testASTF11() {
+        for (WebElement info : homePage.footerInfos) {
+            homePage.moveIntoView(info);
+            homePage.isDisplayed(info);
+
+        }
 
     }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
