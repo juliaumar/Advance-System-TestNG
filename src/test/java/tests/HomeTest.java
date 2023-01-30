@@ -1,7 +1,12 @@
 package tests;
 
 import base.BaseTest;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+
+
+
+import data.DataProviders;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -15,7 +20,7 @@ import pages.HomePage;
 import utils.Screenshot;
 import utils.SeleniumUtils;
 
-import javax.swing.*;
+
 
 public class HomeTest extends BaseTest {
 
@@ -64,16 +69,19 @@ public class HomeTest extends BaseTest {
     @Test(testName = "ASTF-5-02: JOIN NOW button should take the user to “Join Us")
     public void test05() {
         String joinUsTitle = "Advance Systems - Join Us";
+        homePage.click(homePage.joinNowBtn);
+        Assert.assertEquals(joinUsTitle, getDriver().getTitle());
 
-        Point joinBtnLo = homePage.joinNowBtn.getLocation();
-        Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
-        System.out.println(joinBtnLo);
-        System.out.println(socialMediaLinkLo);
-        System.out.println(joinBtnLo.getX());
-        System.out.println(socialMediaLinkLo.getX());
 
-        Assert.assertTrue(joinBtnLo.getX() < socialMediaLinkLo.getX());
+    }
 
+    @Test(testName = "ASTF-12: Verify if footer quick links link to correct pages", dataProviderClass = DataProviders.class, dataProvider = "quickLinks")
+    public void test05(String linkName, String title) {
+
+        getDriver().findElement(By.linkText(linkName)).click();
+        SeleniumUtils.switchToNextWindow(getDriver());
+        homePage.sleep(1000L);
+        Assert.assertEquals(getDriver().getTitle(), title);
     }
 
     @Test(testName = "ASTF-3 Parallax Section 2")
@@ -88,17 +96,6 @@ public class HomeTest extends BaseTest {
 
     }
 
-    @Test(testName = "ASTF-6 Second  Page Navigation Bar")
-    public void testASTF6() {
-        Actions action = new Actions(getDriver());
-        action.sendKeys(Keys.PAGE_DOWN).build().perform();
-        for (WebElement Btn : homePage.secondNavBarBtns) {
-            homePage.isDisplayed(Btn);
-
-        }
-
-    }
-
     @Test(testName = "ASTF-11 Footer Info Display")
     public void testASTF11() {
         for (WebElement info : homePage.footerInfos) {
@@ -106,20 +103,35 @@ public class HomeTest extends BaseTest {
             homePage.isDisplayed(info);
 
         }
-
     }
 
-    @Test(testName = "ASTF-5: Title of the Home Page")
-    public void testASTF5() {
+    @Test(testName = "ASTF-4: Title of the Home Page")
+    public void testASTF4() {
         Assert.assertEquals(getDriver().getTitle(), "Advance Systems - Home");
+
     }
+
     @Test(testName = "ASTF-15: Copyright Update")
     public void testASTF15() {
         String expectedText = "Copyright © 2022 Advance Systems LLC. All Rights Reserved.";
         Assert.assertTrue(true, expectedText);
     }
 
+    @Test(testName = "ASTF-6 Second  Page Navigation Bar")
+    public void testASTF6() {
+        Actions action = new Actions(getDriver());
+        action.sendKeys(Keys.PAGE_DOWN).build().perform();
+        for (WebElement Btn : homePage.secondNavBarBtns) {
+            homePage.isDisplayed(Btn);
+        }
+    }
 }
+
+
+
+
+
+
 
 
 

@@ -1,10 +1,13 @@
 package pages;
 
 import base.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.ExtentManager;
+import utils.SeleniumUtils;
 
 import java.util.List;
 
@@ -53,7 +56,6 @@ public class HomePage extends BasePage {
      //julia Parallax Section
     @FindBy(xpath = "//ul[1]/li[2]/div[4]/div[1]/div[1]/div[1]/a[1]")
     public WebElement readMoreBtn2;
-
 
 
 }
