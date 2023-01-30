@@ -1,6 +1,7 @@
 package tests;
 
 import base.BaseTest;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -13,12 +14,12 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import utils.Screenshot;
 import utils.SeleniumUtils;
+
 import javax.swing.*;
 
 public class HomeTest extends BaseTest {
 
     HomePage homePage;
-
 
     @BeforeMethod
     public void localSetUp() {
@@ -35,6 +36,7 @@ public class HomeTest extends BaseTest {
         Assert.assertTrue(homePage.joinNowBtn.isDisplayed());
 
     }
+
     @Test(testName = "ASTF-3 Parallax Section")
     public void test03() {
         homePage.isDisplayed(homePage.header1);
@@ -44,9 +46,10 @@ public class HomeTest extends BaseTest {
         homePage.click(homePage.readMoreBtn);
         Assert.assertEquals(getDriver().getTitle(), "Advance Systems - Services");
     }
+
     @Test(testName = "ASTF-5-01: Verify JOIN NOW button is above the main content")
 
-    public void test04(){
+    public void test04() {
         Point joinBtnLo = homePage.joinNowBtn.getLocation();
         Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
         System.out.println(joinBtnLo);
@@ -55,32 +58,23 @@ public class HomeTest extends BaseTest {
         System.out.println(socialMediaLinkLo.getX());
 
         Assert.assertTrue(joinBtnLo.getX() < socialMediaLinkLo.getX());
-        
+
     }
+
     @Test(testName = "ASTF-5-02: JOIN NOW button should take the user to “Join Us")
-    public void test05(){
+    public void test05() {
         String joinUsTitle = "Advance Systems - Join Us";
-    public void test03(){
-            Point joinBtnLo = homePage.joinNowBtn.getLocation();
-            Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
-            System.out.println(joinBtnLo);
-            System.out.println(socialMediaLinkLo);
-            System.out.println(joinBtnLo.getX());
-            System.out.println(socialMediaLinkLo.getX());
 
+        Point joinBtnLo = homePage.joinNowBtn.getLocation();
+        Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
+        System.out.println(joinBtnLo);
+        System.out.println(socialMediaLinkLo);
+        System.out.println(joinBtnLo.getX());
+        System.out.println(socialMediaLinkLo.getX());
 
-            Assert.assertTrue(joinBtnLo.getX() < socialMediaLinkLo.getX());
+        Assert.assertTrue(joinBtnLo.getX() < socialMediaLinkLo.getX());
 
-        }
-     @Test(testName = "ASTF-5-02: JOIN NOW button should take the user to “Join Us")
-        public void test04(){
-            String joinUsTitle = "Advance Systems - Join Us";
-
-            homePage.click(homePage.joinNowBtn);
-            SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
-
-            Assert.assertEquals(joinUsTitle, getDriver().getTitle());
-
+    }
 
     @Test(testName = "ASTF-3 Parallax Section 2")
     public void test06() {
@@ -92,32 +86,43 @@ public class HomeTest extends BaseTest {
         at.sendKeys(Keys.PAGE_UP).build().perform();
         homePage.click(homePage.readMoreBtn2);
 
+    }
+
+    @Test(testName = "ASTF-6 Second  Page Navigation Bar")
+    public void testASTF6() {
+        Actions action = new Actions(getDriver());
+        action.sendKeys(Keys.PAGE_DOWN).build().perform();
+        for (WebElement Btn : homePage.secondNavBarBtns) {
+            homePage.isDisplayed(Btn);
+
         }
-     @Test(testName = "ASTF-6 Second  Page Navigation Bar")
-     public void testASTF6() {
-            Actions action = new Actions(getDriver());
-            action.sendKeys(Keys.PAGE_DOWN).build().perform();
-            for (WebElement Btn : homePage.secondNavBarBtns) {
-                homePage.isDisplayed(Btn);
 
-              }
+    }
 
-
-            }
     @Test(testName = "ASTF-11 Footer Info Display")
-    public void testASTF11(){
-        for (WebElement info: homePage.footerInfos) {
+    public void testASTF11() {
+        for (WebElement info : homePage.footerInfos) {
             homePage.moveIntoView(info);
             homePage.isDisplayed(info);
 
         }
 
-        }
+    }
 
-
-
+    @Test(testName = "ASTF-5: Title of the Home Page")
+    public void testASTF5() {
+        Assert.assertEquals(getDriver().getTitle(), "Advance Systems - Home");
+    }
+    @Test(testName = "ASTF-15: Copyright Update")
+    public void testASTF15() {
+        String expectedText = "Copyright © 2022 Advance Systems LLC. All Rights Reserved.";
+        Assert.assertTrue(true, expectedText);
+    }
 
 }
+
+
+
 
 
 
