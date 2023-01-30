@@ -71,12 +71,10 @@ public class HomeTest extends BaseTest {
         String joinUsTitle = "Advance Systems - Join Us";
         homePage.click(homePage.joinNowBtn);
         Assert.assertEquals(joinUsTitle, getDriver().getTitle());
-
-
     }
 
     @Test(testName = "ASTF-12: Verify if footer quick links link to correct pages", dataProviderClass = DataProviders.class, dataProvider = "quickLinks")
-    public void test05(String linkName, String title) {
+    public void testASTF12(String linkName, String title) {
 
         getDriver().findElement(By.linkText(linkName)).click();
         SeleniumUtils.switchToNextWindow(getDriver());
