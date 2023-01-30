@@ -22,13 +22,17 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[text()='Join Now']")
     public WebElement joinNowBtn;
 
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/header[1]/div[4]/div[1]/div[2]/nav[1]/div[2]/ul[1]/li")
+    public List<WebElement> secondNavBarBtns;
+
     @FindBy(xpath = "//a/i[@class='fa fa-facebook-square']")
     public WebElement socialMediaLink;
-////div[@class='col-md-6 col-sm-12']//ul//li/a/i
 
-    @FindBy(xpath = "(//a[@href='index.html'][text()='\" + linkText + \"'])[4]")
-    public List<WebElement> footerQuickLinks;
+
 
 
 
 }
+
+

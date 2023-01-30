@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Advance-System-TestNG" target="8" />
+      <module name="Advance-System-TestNG" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
