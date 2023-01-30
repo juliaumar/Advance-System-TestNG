@@ -19,9 +19,13 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[text()='Join Now']")
     public WebElement joinNowBtn;
 
+
     //julia Parallax Section
     @FindBy(xpath = "//h2[normalize-space()='A bright career iswaiting for you...']")
     public WebElement header1;
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/header[1]/div[4]/div[1]/div[2]/nav[1]/div[2]/ul[1]/li")
+    public List<WebElement> secondNavBarBtns;
 
     @FindBy(xpath = "//a/i[@class='fa fa-facebook-square']")
     public WebElement socialMediaLink;
@@ -42,7 +46,13 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//li[1]/div[4]/div[1]/div[1]/div[1]/a[1]")
     public WebElement readMoreBtn;
 
+
     //julia Parallax Section
     @FindBy(xpath = "//ul[1]/li[2]/div[4]/div[1]/div[1]/div[1]/a[1]")
     public WebElement readMoreBtn2;
+
+
+
 }
+
+
