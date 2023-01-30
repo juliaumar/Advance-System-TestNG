@@ -93,16 +93,37 @@ public class HomeTest extends BaseTest {
         homePage.click(homePage.readMoreBtn2);
 
         }
-        @Test(testName = "ASTF-6 Second  Page Navigation Bar")
-        public void testASTF6() {
+     @Test(testName = "ASTF-6 Second  Page Navigation Bar")
+     public void testASTF6() {
             Actions action = new Actions(getDriver());
             action.sendKeys(Keys.PAGE_DOWN).build().perform();
             for (WebElement Btn : homePage.secondNavBarBtns) {
                 homePage.isDisplayed(Btn);
 
+              }
+
+
             }
-    }
+    @Test(testName = "ASTF-11 Footer Info Display")
+    public void testASTF11(){
+        for (WebElement info: homePage.footerInfos) {
+            homePage.moveIntoView(info);
+            homePage.isDisplayed(info);
+
+        }
+
+        }
+
+
+
+
 }
+
+
+
+
+
+
 
 
 
