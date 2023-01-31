@@ -54,7 +54,7 @@ public class HomeTest extends BaseTest {
 
     @Test(testName = "ASTF-5-01: Verify JOIN NOW button is above the main content")
 
-    public void test04() {
+    public void testASTF0501() {
         Point joinBtnLo = homePage.joinNowBtn.getLocation();
         Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
         System.out.println(joinBtnLo);
@@ -67,7 +67,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(testName = "ASTF-5-02: JOIN NOW button should take the user to “Join Us")
-    public void test05() {
+    public void testASTF0502() {
         String joinUsTitle = "Advance Systems - Join Us";
         homePage.click(homePage.joinNowBtn);
         Assert.assertEquals(joinUsTitle, getDriver().getTitle());
@@ -76,7 +76,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(testName = "ASTF-12: Verify if footer quick links link to correct pages", dataProviderClass = DataProviders.class, dataProvider = "quickLinks")
-    public void test05(String linkName, String title) {
+    public void testASTF12(String linkName, String title) {
 
         getDriver().findElement(By.linkText(linkName)).click();
         SeleniumUtils.switchToNextWindow(getDriver());
