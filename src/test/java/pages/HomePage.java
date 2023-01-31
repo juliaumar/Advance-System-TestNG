@@ -1,8 +1,10 @@
 package pages;
 
 import base.BasePage;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -16,6 +18,7 @@ public class HomePage extends BasePage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(xpath = "//a[text()='Join Now']")
     public WebElement joinNowBtn;
 
@@ -63,12 +66,21 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li")
     public List<WebElement> footerInfos;
 
-     //julia Parallax Section
+
+    }
 
 
 
 
 
-}
+
+
+
+
+
+
+
+
+
 
 

@@ -91,23 +91,18 @@ public class HomeTest extends BaseTest {
     public void test9Testimonials() {
         homePage.isDisplayed(homePage.wordsFromOurClient);
         for (WebElement el : homePage.TextNameState) {
-            homePage.moveIntoView(el);
             homePage.isDisplayed(el);
-
-
         }
 
     }
 
+
     @Test(testName = "ASTF-6 Second  Page Navigation Bar")
     public void testASTF6() {
-
         Actions action = new Actions(getDriver());
         action.sendKeys(Keys.PAGE_DOWN).build().perform();
         for (WebElement Btn : homePage.secondNavBarBtns) {
             homePage.isDisplayed(Btn);
-
-
         }
     }
 
