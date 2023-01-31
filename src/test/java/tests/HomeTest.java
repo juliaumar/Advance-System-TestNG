@@ -43,7 +43,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(testName = "ASTF-3 Parallax Section")
-    public void test03() {
+    public void testASTF301() {
         homePage.isDisplayed(homePage.header1);
         homePage.isDisplayed(homePage.text1);
         Actions at = new Actions(getDriver());
@@ -54,7 +54,7 @@ public class HomeTest extends BaseTest {
 
     @Test(testName = "ASTF-5-01: Verify JOIN NOW button is above the main content")
 
-    public void test04() {
+    public void testASTF0501() {
         Point joinBtnLo = homePage.joinNowBtn.getLocation();
         Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
         System.out.println(joinBtnLo);
@@ -67,7 +67,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(testName = "ASTF-5-02: JOIN NOW button should take the user to “Join Us")
-    public void test05() {
+    public void testASTF0502() {
         String joinUsTitle = "Advance Systems - Join Us";
         homePage.click(homePage.joinNowBtn);
         Assert.assertEquals(joinUsTitle, getDriver().getTitle());
@@ -83,7 +83,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(testName = "ASTF-3 Parallax Section 2")
-    public void test06() {
+    public void testASTF0302() {
         Actions at = new Actions(getDriver());
         homePage.waitForElementClickability(homePage.header2);
         homePage.isDisplayed(homePage.header2);
@@ -104,7 +104,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(testName = "ASTF-4: Title of the Home Page")
-    public void testASTF4() {
+    public void testASTF04() {
         Assert.assertEquals(getDriver().getTitle(), "Advance Systems - Home");
 
     }
@@ -116,7 +116,7 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(testName = "ASTF-6 Second  Page Navigation Bar")
-    public void testASTF6() {
+    public void testASTF06() {
         Actions action = new Actions(getDriver());
         action.sendKeys(Keys.PAGE_DOWN).build().perform();
         for (WebElement Btn : homePage.secondNavBarBtns) {
