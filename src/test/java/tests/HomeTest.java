@@ -3,7 +3,9 @@ package tests;
 import base.BaseTest;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import org.openqa.selenium.WebElement;
@@ -36,8 +38,9 @@ public class HomeTest extends BaseTest {
     public void test02() {
         Assert.assertTrue(homePage.joinNowBtn.isDisplayed());
     }
+
     @Test(testName = "ASTF-5-01: Verify JOIN NOW button is above the main content")
-    public void test03(){
+    public void test03() {
         Point joinBtnLo = homePage.joinNowBtn.getLocation();
         Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
         System.out.println(joinBtnLo);
@@ -46,10 +49,11 @@ public class HomeTest extends BaseTest {
         System.out.println(socialMediaLinkLo.getX());
 
         Assert.assertTrue(joinBtnLo.getX() < socialMediaLinkLo.getX());
-        
+
     }
+
     @Test(testName = "ASTF-5-02: JOIN NOW button should take the user to “Join Us")
-    public void test04(){
+    public void test04() {
         String joinUsTitle = "Advance Systems - Join Us";
 
         homePage.click(homePage.joinNowBtn);
@@ -58,8 +62,34 @@ public class HomeTest extends BaseTest {
         Assert.assertEquals(joinUsTitle, getDriver().getTitle());
     }
 
+    @Test(testName = "ASTF-8 What to expect")
+    public void testASTF8() {
+        Actions action = new Actions(getDriver());
+        action.sendKeys(Keys.PAGE_DOWN).build().perform();
+        for (WebElement Btn : homePage.whattoexpect) {
+            homePage.isDisplayed(Btn);
+        }
+    }
 
-}
+    @Test(testName = "ASTF-13 social media")
+    public void testASTF13() {
+        Actions action = new Actions(getDriver());
+        action.sendKeys(Keys.PAGE_DOWN).build().perform();
+        for (WebElement Btn : homePage.socialmedia) {
+            homePage.isDisplayed(Btn);
+        }
+    }
+
+        @Test(testName = "ASTF-10 companies")
+        public void testASTF10() {
+            Actions action = new Actions(getDriver());
+            action.sendKeys(Keys.PAGE_DOWN).build().perform();
+            for (WebElement Btn : homePage.companies) {
+                homePage.isDisplayed(Btn);
+            }
+        }
+    }
+
 
 
 

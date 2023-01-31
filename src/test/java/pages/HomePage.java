@@ -16,14 +16,20 @@ public class HomePage extends BasePage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(xpath = "//a[text()='Join Now']")
     public WebElement joinNowBtn;
 
     @FindBy(xpath = "//a/i[@class='fa fa-facebook-square']")
     public WebElement socialMediaLink;
 
+    @FindBy(xpath = "//div[@class='flex-box']")
+    public List<WebElement> whattoexpect;
 
+    @FindBy(xpath = "//div[@class='socail-icon-area']")
+    public List<WebElement> socialmedia;
 
-
-
+    @FindBy(xpath = "//section[@class='partner-logo sp-one']")
+    public List<WebElement> companies;
 }
+
