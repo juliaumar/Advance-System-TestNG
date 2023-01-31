@@ -8,22 +8,20 @@ import base.BaseTest;
 import data.DataProviders;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.Point;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
-import utils.Screenshot;
 import utils.SeleniumUtils;
 
 
 
-public class HomeTest extends BaseTest {
 
+
+public class HomeTest extends BaseTest {
     HomePage homePage;
 
     @BeforeMethod
@@ -52,9 +50,10 @@ public class HomeTest extends BaseTest {
         Assert.assertEquals(getDriver().getTitle(), "Advance Systems - Services");
     }
 
-    @Test(testName = "ASTF-5-01: Verify JOIN NOW button is above the main content")
 
+    @Test(testName = "ASTF-5-01: Verify JOIN NOW button is above the main content")
     public void testASTF0501() {
+
         Point joinBtnLo = homePage.joinNowBtn.getLocation();
         Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
         System.out.println(joinBtnLo);
@@ -67,6 +66,27 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(testName = "ASTF-5-02: JOIN NOW button should take the user to “Join Us")
+    public void test05() {
+        String joinUsTitle = "Advance Systems - Join Us";
+        homePage.click(homePage.joinNowBtn);
+        SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
+        Assert.assertEquals(joinUsTitle, getDriver().getTitle());
+    }
+
+    @Test
+    public void test06() {
+        Point joinBtnLo = homePage.joinNowBtn.getLocation();
+        Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
+        System.out.println(joinBtnLo);
+        System.out.println(socialMediaLinkLo);
+        System.out.println(joinBtnLo.getX());
+        System.out.println(socialMediaLinkLo.getX());
+
+
+        Assert.assertTrue(joinBtnLo.getX() < socialMediaLinkLo.getX());
+    }
+
+    @Test
     public void testASTF0502() {
         String joinUsTitle = "Advance Systems - Join Us";
         homePage.click(homePage.joinNowBtn);
@@ -88,27 +108,51 @@ public class HomeTest extends BaseTest {
         Thread.sleep(2000);
         Assert.assertTrue(homePage.secondSectionHeader.isDisplayed());
     }
+
     @Test
     public void testHeaders1() {
         Assert.assertTrue(homePage.secondSectionHeader1.isDisplayed());
     }
+
     @Test
     public void testHeaders2() {
         Assert.assertTrue(homePage.secondSectionHeader2.isDisplayed());
+
     }
 
 
     @Test(testName = "ASTF-3 Parallax Section 2")
     public void testASTF0302() {
+
         Actions at = new Actions(getDriver());
         homePage.waitForElementClickability(homePage.header2);
         homePage.isDisplayed(homePage.header2);
-        Screenshot.takeScreenshot(getDriver());
         homePage.isDisplayed(homePage.text2);
         at.sendKeys(Keys.PAGE_UP).build().perform();
         homePage.click(homePage.readMoreBtn2);
 
     }
+
+
+    @Test(testName = "ASTF-9 Testimonials")
+    public void test9Testimonials() {
+        homePage.isDisplayed(homePage.wordsFromOurClient);
+        for (WebElement el : homePage.TextNameState) {
+            homePage.isDisplayed(el);
+        }
+
+    }
+
+
+    @Test(testName = "ASTF-6 Second  Page Navigation Bar")
+    public void testASTF6() {
+        Actions action = new Actions(getDriver());
+        action.sendKeys(Keys.PAGE_DOWN).build().perform();
+        for (WebElement Btn : homePage.secondNavBarBtns) {
+            homePage.isDisplayed(Btn);
+        }
+    }
+
 
     @Test(testName = "ASTF-11 Footer Info Display")
     public void testASTF11() {
@@ -118,6 +162,7 @@ public class HomeTest extends BaseTest {
 
         }
     }
+
 
     @Test(testName = "ASTF-4: Title of the Home Page")
     public void testASTF04() {
@@ -140,6 +185,8 @@ public class HomeTest extends BaseTest {
         }
     }
 }
+
+
 
 
 
