@@ -185,10 +185,38 @@ public class HomeTest extends BaseTest {
         }
     }
 
+
+    @Test(testName = "Contact info on main page")
+    public void testASTF1() {
+        for (WebElement el: homePage.address) {
+            homePage.isDisplayed(el);
+
+        }
+    }
+
+    @Test(testName = "Contact info on main page")
+    public void testASTF2() {
+        for (WebElement el2: homePage.phone) {
+            homePage.isDisplayed(el2);
+        }
+
+    }
+    @Test(testName = "ASTF-7 Social Media Options")
+    public void testASTF7(){
+        for (WebElement link:homePage.socialLinks) {
+            homePage.isDisplayed(link);
+            homePage.click(link);
+            getDriver().navigate().forward();
+            System.out.println(getDriver().getCurrentUrl());
+            getDriver().navigate().back();
+
+
+        }
+    }
+
+
+
 }
-
-
-
 
 
 

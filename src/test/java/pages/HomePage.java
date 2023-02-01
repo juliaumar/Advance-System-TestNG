@@ -77,7 +77,20 @@ public class HomePage extends BasePage {
     public List<WebElement> footerInfos;
 
 
-    }
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/header[1]/div[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li")
+    public List<WebElement>  address;
+
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/header[1]/div[2]/div[1]/div[1]/div[2]/div[2]/ul[1]/li")
+    public List<WebElement> phone;
+
+    @FindBy(xpath = "//ul[@class='social-icon-seven']//li//a")
+    public List<WebElement> socialLinks;
+
+}
+
+
+
 
 
 
