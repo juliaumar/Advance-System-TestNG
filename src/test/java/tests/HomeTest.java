@@ -184,10 +184,25 @@ public class HomeTest extends BaseTest {
             homePage.isDisplayed(Btn);
         }
     }
+
+    @Test(testName = "Contact info on main page")
+    public void testASTF1() {
+        for (WebElement el: homePage.address) {
+            homePage.isDisplayed(el);
+
+        }
+    }
+
+    @Test(testName = "Contact info on main page")
+    public void testASTF2() {
+        for (WebElement el2: homePage.phone) {
+            homePage.isDisplayed(el2);
+        }
+
+    }
+
+
 }
-
-
-
 
 
 
