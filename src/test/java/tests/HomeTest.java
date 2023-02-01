@@ -20,6 +20,7 @@ import pages.HomePage;
 import utils.Screenshot;
 import utils.SeleniumUtils;
 
+import java.util.List;
 
 
 public class HomeTest extends BaseTest {
@@ -122,6 +123,30 @@ public class HomeTest extends BaseTest {
         for (WebElement Btn : homePage.secondNavBarBtns) {
             homePage.isDisplayed(Btn);
         }
+    }
+
+    @Test(testName = "ASTF-14-01: Verify new letter section should have email input field")
+    public void testASTF1401(){
+        String emailTagName = homePage.emailInputField.getTagName();
+        String expectedTagName = "input";
+        System.out.println(emailTagName);
+        Assert.assertEquals(expectedTagName, emailTagName);
+
+    }
+    @Test(testName = "ASTF-14-02: Verify email input field has a place holder “Email Address…”")
+    public void testASTF1402(){
+        String emailPlaceHolder = homePage.emailInputField.getAttribute("placeholder");
+        String actualPlaceHolder = "Email Address...";
+        System.out.println(emailPlaceHolder);
+        Assert.assertEquals(actualPlaceHolder, emailPlaceHolder);
+    }
+    @Test(testName = "ASTF-14-03: Verify email input field is in New letter section")
+    public void testASTF1403(){
+        Point newLetterSection = homePage.newLetterSection.getLocation();
+        Point emailFieldLo = homePage.emailInputField.getLocation();
+
+        Assert.assertTrue(newLetterSection.getX() < emailFieldLo.getX());
+
     }
 }
 

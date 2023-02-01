@@ -57,6 +57,14 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//ul[1]/li[2]/div[4]/div[1]/div[1]/div[1]/a[1]")
     public WebElement readMoreBtn2;
 
+    @FindBy(xpath = "//input[@type='email']")
+    public WebElement emailInputField;
+
+    @FindBy(xpath = "//div[@class='footer-newsletter footer-column-border col-lg-4 col-md-6 col-sm-6 col-xs-12']")
+    public WebElement newLetterSection;
+
+
+
 
 }
 
