@@ -2,9 +2,6 @@ package tests;
 
 import base.BaseTest;
 
-
-
-
 import data.DataProviders;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -16,9 +13,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import utils.SeleniumUtils;
-
-
-
 
 
 public class HomeTest extends BaseTest {
@@ -52,8 +46,8 @@ public class HomeTest extends BaseTest {
 
 
     @Test(testName = "ASTF-5-01: Verify JOIN NOW button is above the main content")
-    public void testASTF0501() {
 
+    public void testASTF0501() {
         Point joinBtnLo = homePage.joinNowBtn.getLocation();
         Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
         System.out.println(joinBtnLo);
@@ -66,32 +60,13 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(testName = "ASTF-5-02: JOIN NOW button should take the user to “Join Us")
-    public void test05() {
+    public void testASTF0502() {
         String joinUsTitle = "Advance Systems - Join Us";
         homePage.click(homePage.joinNowBtn);
         SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
         Assert.assertEquals(joinUsTitle, getDriver().getTitle());
     }
 
-    @Test
-    public void test06() {
-        Point joinBtnLo = homePage.joinNowBtn.getLocation();
-        Point socialMediaLinkLo = homePage.socialMediaLink.getLocation();
-        System.out.println(joinBtnLo);
-        System.out.println(socialMediaLinkLo);
-        System.out.println(joinBtnLo.getX());
-        System.out.println(socialMediaLinkLo.getX());
-
-
-        Assert.assertTrue(joinBtnLo.getX() < socialMediaLinkLo.getX());
-    }
-
-    @Test
-    public void testASTF0502() {
-        String joinUsTitle = "Advance Systems - Join Us";
-        homePage.click(homePage.joinNowBtn);
-        Assert.assertEquals(joinUsTitle, getDriver().getTitle());
-    }
 
     @Test(testName = "ASTF-12: Verify if footer quick links link to correct pages", dataProviderClass = DataProviders.class, dataProvider = "quickLinks")
     public void testASTF12(String linkName, String title) {
@@ -143,17 +118,6 @@ public class HomeTest extends BaseTest {
 
     }
 
-
-    @Test(testName = "ASTF-6 Second  Page Navigation Bar")
-    public void testASTF6() {
-        Actions action = new Actions(getDriver());
-        action.sendKeys(Keys.PAGE_DOWN).build().perform();
-        for (WebElement Btn : homePage.secondNavBarBtns) {
-            homePage.isDisplayed(Btn);
-        }
-    }
-
-
     @Test(testName = "ASTF-11 Footer Info Display")
     public void testASTF11() {
         for (WebElement info : homePage.footerInfos) {
@@ -162,7 +126,6 @@ public class HomeTest extends BaseTest {
 
         }
     }
-
 
     @Test(testName = "ASTF-4: Title of the Home Page")
     public void testASTF04() {
@@ -186,9 +149,36 @@ public class HomeTest extends BaseTest {
     }
 
 
+    @Test(testName = "ASTF-14-01: Verify new letter section should have email input field")
+    public void testASTF1401() {
+        String emailTagName = homePage.emailInputField.getTagName();
+        String expectedTagName = "input";
+        System.out.println(emailTagName);
+        Assert.assertEquals(expectedTagName, emailTagName);
+
+    }
+
+    @Test(testName = "ASTF-14-02: Verify email input field has a place holder “Email Address…”")
+    public void testASTF1402() {
+        String emailPlaceHolder = homePage.emailInputField.getAttribute("placeholder");
+        String actualPlaceHolder = "Email Address...";
+        System.out.println(emailPlaceHolder);
+        Assert.assertEquals(actualPlaceHolder, emailPlaceHolder);
+    }
+
+    @Test(testName = "ASTF-14-03: Verify email input field is in New letter section")
+    public void testASTF1403() {
+        Point newLetterSection = homePage.newLetterSection.getLocation();
+        Point emailFieldLo = homePage.emailInputField.getLocation();
+
+        Assert.assertTrue(newLetterSection.getX() < emailFieldLo.getX());
+
+    }
+
+
     @Test(testName = "Contact info on main page")
     public void testASTF1() {
-        for (WebElement el: homePage.address) {
+        for (WebElement el : homePage.address) {
             homePage.isDisplayed(el);
 
         }
@@ -196,11 +186,11 @@ public class HomeTest extends BaseTest {
 
     @Test(testName = "Contact info on main page")
     public void testASTF2() {
-        for (WebElement el2: homePage.phone) {
+        for (WebElement el2 : homePage.phone) {
             homePage.isDisplayed(el2);
         }
-
     }
+
     @Test(testName = "ASTF-7 Social Media Options")
     public void testASTF7(){
         for (WebElement link:homePage.socialLinks) {
@@ -213,6 +203,7 @@ public class HomeTest extends BaseTest {
 
         }
     }
+
 
 
 
