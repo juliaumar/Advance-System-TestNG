@@ -148,6 +148,7 @@ public class HomeTest extends BaseTest {
         }
     }
 
+
     @Test(testName = "ASTF-14-01: Verify new letter section should have email input field")
     public void testASTF1401() {
         String emailTagName = homePage.emailInputField.getTagName();
@@ -174,6 +175,7 @@ public class HomeTest extends BaseTest {
 
     }
 
+
     @Test(testName = "Contact info on main page")
     public void testASTF1() {
         for (WebElement el : homePage.address) {
@@ -188,6 +190,23 @@ public class HomeTest extends BaseTest {
             homePage.isDisplayed(el2);
         }
     }
+
+    @Test(testName = "ASTF-7 Social Media Options")
+    public void testASTF7(){
+        for (WebElement link:homePage.socialLinks) {
+            homePage.isDisplayed(link);
+            homePage.click(link);
+            getDriver().navigate().forward();
+            System.out.println(getDriver().getCurrentUrl());
+            getDriver().navigate().back();
+
+
+        }
+    }
+
+
+
+
 }
 
 

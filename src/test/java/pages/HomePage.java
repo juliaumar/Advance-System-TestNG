@@ -90,6 +90,10 @@ public class HomePage extends BasePage {
     public List<WebElement> phone;
 
 
+    @FindBy(xpath = "//ul[@class='social-icon-seven']//li//a")
+    public List<WebElement> socialLinks;
+
+
 }
 
 
