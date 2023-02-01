@@ -1,13 +1,10 @@
 package pages;
 
 import base.BasePage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.ExtentManager;
-import utils.SeleniumUtils;
 
 import java.util.List;
 
@@ -19,16 +16,30 @@ public class HomePage extends BasePage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(xpath = "//a[text()='Join Now']")
     public WebElement joinNowBtn;
+
+
+
+    @FindBy(xpath = "//section[@class='services-section']//div[@class='sec-title centered']")
+    public WebElement secondSectionHeader;
+
+    @FindBy(xpath = "//section[@class='services-section']//div[@class='title']")
+    public WebElement secondSectionHeader1;
+
+    @FindBy(xpath = "//section[@class='services-section']//div[@class='text']//p")
+    public WebElement secondSectionHeader2;
 
 
     //julia Parallax Section
     @FindBy(xpath = "//h2[normalize-space()='A bright career iswaiting for you...']")
     public WebElement header1;
 
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/header[1]/div[4]/div[1]/div[2]/nav[1]/div[2]/ul[1]/li")
     public List<WebElement> secondNavBarBtns;
+
 
     @FindBy(xpath = "//a/i[@class='fa fa-facebook-square']")
     public WebElement socialMediaLink;
@@ -50,10 +61,8 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//li[1]/div[4]/div[1]/div[1]/div[1]/a[1]")
     public WebElement readMoreBtn;
 
-    @FindBy(xpath = "//footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li")
-    public List<WebElement> footerInfos;
 
-     //julia Parallax Section
+    //julia Parallax Section
     @FindBy(xpath = "//ul[1]/li[2]/div[4]/div[1]/div[1]/div[1]/a[1]")
     public WebElement readMoreBtn2;
 
@@ -63,9 +72,43 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//div[@class='footer-newsletter footer-column-border col-lg-4 col-md-6 col-sm-6 col-xs-12']")
     public WebElement newLetterSection;
 
+    @FindBy(xpath = "//h2[normalize-space()='Words from our Clients']")
+    public WebElement wordsFromOurClient;
 
+    @FindBy(xpath = "//section[contains (@class,'testimonial')]//div[contains (@class,'active')]")
+    public List<WebElement> TextNameState;
+
+
+    @FindBy(xpath = "//footer[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/ul[1]/li")
+    public List<WebElement> footerInfos;
+
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/header[1]/div[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li")
+    public List<WebElement>  address;
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/header[1]/div[2]/div[1]/div[1]/div[2]/div[2]/ul[1]/li")
+    public List<WebElement> phone;
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
