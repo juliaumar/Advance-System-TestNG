@@ -78,20 +78,20 @@ public class HomeTest extends BaseTest {
     }
 
 
-    @Test(testName = "ASTF-16 Main Header section")
+    @Test(testName = "ASTF-16 Main Header section, main header")
     public void testHeaders() throws InterruptedException {
         Thread.sleep(2000);
         Assert.assertTrue(homePage.secondSectionHeader.isDisplayed());
     }
 
-    @Test(testName = "ASTF-16 Main Header section")
+    @Test(testName = "ASTF-16 Main Header section, secondary header")
     public void testHeaders1() {
         Assert.assertTrue(homePage.secondSectionHeader1.isDisplayed());
     }
 
-    @Test(testName = "ASTF-16 Main Header section")
+    @Test(testName = "ASTF-16 Main Header section, description under headers")
     public void testHeaders2() {
-        Assert.assertTrue(homePage.secondSectionHeader2.isDisplayed());
+        Assert.assertTrue(homePage.secondSectionHeaderDescription.isDisplayed());
 
     }
 

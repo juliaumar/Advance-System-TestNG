@@ -29,7 +29,7 @@ public class HomePage extends BasePage {
     public WebElement secondSectionHeader1;
 
     @FindBy(xpath = "//section[@class='services-section']//div[@class='text']//p")
-    public WebElement secondSectionHeader2;
+    public WebElement secondSectionHeaderDescription;
 
 
     //julia Parallax Section
