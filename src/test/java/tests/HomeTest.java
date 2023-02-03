@@ -136,7 +136,7 @@ public class HomeTest extends BaseTest {
     @Test(testName = "ASTF-15: Copyright Update")
     public void testASTF15() {
         String expectedText = "Copyright © 2022 Advance Systems LLC. All Rights Reserved.";
-        Assert.assertTrue(true, expectedText);
+
     }
 
     @Test(testName = "ASTF-6 Second  Page Navigation Bar")
@@ -192,8 +192,8 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(testName = "ASTF-7 Social Media Options")
-    public void testASTF7(){
-        for (WebElement link:homePage.socialLinks) {
+    public void testASTF7() {
+        for (WebElement link : homePage.socialLinks) {
             homePage.isDisplayed(link);
             homePage.click(link);
             getDriver().navigate().forward();
@@ -205,9 +205,12 @@ public class HomeTest extends BaseTest {
     }
 
 
-
-
 }
+
+
+
+
+
 
 
 
