@@ -6,9 +6,8 @@
         <classes>
             <class name="tests.HomeTest">
                 <methods>
-                    <include name="testHeaders"/>
-                    <include name="testHeaders1"/>
-                    <include name="testHeaders2"/>
+                    <include name="test01"/>
+                    <include name="test02"/>
                 </methods>
             </class>
         </classes>
