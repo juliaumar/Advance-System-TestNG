@@ -23,11 +23,11 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//section[@class='services-section']//div[@class='sec-title centered']")
     public WebElement secondSectionHeader;
 
-    public String secondSectionHeaderText = "Welcome to Advance System LLC";
+    public String secondSectionHeaderText = "Welcome to Advance Systems LLC.";
 
     @FindBy(xpath = "//section[@class='services-section']//div[@class='title']")
     public WebElement secondSectionHeader1;
-    public String getSecondSectionHeaderText1 = "Our Mission is simple, deliver very honest recruitment services to every customer";
+    public String getSecondSectionHeaderText1 = "Our Mission is simple, deliver very honest recruitment services to every customer.";
 
     @FindBy(xpath = "//section[@class='services-section']//div[@class='text']//p")
     public WebElement secondSectionHeaderDescription;
