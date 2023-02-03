@@ -93,6 +93,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//ul[@class='social-icon-seven']//li//a")
     public List<WebElement> socialLinks;
 
+    @FindBy(css = ".footer-copyright")
+    public WebElement copyrightUpdates;
+
 
 
 
