@@ -135,8 +135,8 @@ public class HomeTest extends BaseTest {
 
     @Test(testName = "ASTF-15: Copyright Update")
     public void testASTF15() {
-        String expectedText = "Copyright © 2022 Advance Systems LLC. All Rights Reserved.";
-        Assert.assertTrue(true, expectedText);
+        // String expectedText = "Copyright © 2022 Advance Systems LLC. All Rights Reserved.";
+        Assert.assertEquals(homePage.copyrightUpdates.getText(), "Copyright © 2022 Advance Systems LLC. All Rights Reserved.");
     }
 
     @Test(testName = "ASTF-6 Second  Page Navigation Bar")
