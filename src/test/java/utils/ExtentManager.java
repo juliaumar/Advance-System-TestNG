@@ -36,9 +36,8 @@ public class ExtentManager {
         this.driver = driver;
         extentTest = extentReports.createTest(getCustomTestName(method));
 
-        extentTest.assignAuthor("Julia");
-        extentTest.assignDevice("Mac OS");
-        extentTest.assignAuthor("Nipaporn");
+
+        extentTest.assignAuthor("Nikolay");
         extentTest.assignDevice("Window10");
     }
 

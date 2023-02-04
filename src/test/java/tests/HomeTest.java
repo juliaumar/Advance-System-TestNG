@@ -1,7 +1,7 @@
 package tests;
 
+import base.BasePage;
 import base.BaseTest;
-
 import data.DataProviders;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -78,20 +78,20 @@ public class HomeTest extends BaseTest {
     }
 
 
-    @Test
-    public void testHeaders() throws InterruptedException {
-        Thread.sleep(2000);
-        Assert.assertTrue(homePage.secondSectionHeader.isDisplayed());
+    @Test(testName = "ASTF-16 Main Header section, main header")
+    public void testHeaders() {
+        homePage.isDisplayed(homePage.secondSectionHeader);
+        Assert.assertEquals(homePage.secondSectionHeader.getText(), homePage.secondSectionHeaderText);
     }
-
-    @Test
+    @Test(testName = "ASTF-16 Main Header section, secondary header")
     public void testHeaders1() {
-        Assert.assertTrue(homePage.secondSectionHeader1.isDisplayed());
+        homePage.isDisplayed(homePage.secondSectionHeader1);
+        Assert.assertEquals(homePage.secondSectionHeader1.getText(), homePage.getSecondSectionHeaderText1);
     }
 
-    @Test
+    @Test(testName = "ASTF-16 Main Header section, description under headers")
     public void testHeaders2() {
-        Assert.assertTrue(homePage.secondSectionHeader2.isDisplayed());
+        Assert.assertTrue(homePage.secondSectionHeaderDescription.isDisplayed());
 
     }
 
@@ -210,7 +210,9 @@ public class HomeTest extends BaseTest {
     }
 
 
+
 }
+
 
 
 
