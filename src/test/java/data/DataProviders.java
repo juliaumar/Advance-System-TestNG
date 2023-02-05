@@ -4,7 +4,7 @@ import org.testng.annotations.DataProvider;
 
 public class DataProviders {
     @DataProvider(name = "quickLinks")
-    public static Object[][] quickLinks(){
+    public static Object[][] quickLinks() {
         Object[][] data = new Object[6][2];
         data[0][0] = "Home";
         data[0][1] = "Advance Systems - Home";
@@ -26,4 +26,5 @@ public class DataProviders {
 
         return data;
     }
+
 }

@@ -10,9 +10,13 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pages.AboutUsPage;
 import pages.HomePage;
 import utils.SeleniumUtils;
+
+import java.util.List;
 
 
 public class HomeTest extends BaseTest {
@@ -114,6 +118,8 @@ public class HomeTest extends BaseTest {
         homePage.isDisplayed(homePage.wordsFromOurClient);
         for (WebElement el : homePage.TextNameState) {
             homePage.isDisplayed(el);
+            Assert.assertEquals(el.getText(), "John Doe, CA");
+            System.out.println(el.getText());
         }
 
     }
@@ -208,7 +214,6 @@ public class HomeTest extends BaseTest {
 
         }
     }
-
 
 
 }
