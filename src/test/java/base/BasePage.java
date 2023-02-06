@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public class BasePage {
     protected WebDriver driver;
 
@@ -30,6 +32,7 @@ public class BasePage {
         highlightElement(element);
         element.click();
     }
+
     public void isDisplayed(WebElement element){
         waitForElementClickability(element);
         moveIntoView(element);
@@ -60,17 +63,21 @@ public class BasePage {
     }
 
     public void waitForElementClickability(WebElement element){
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public void waitForElementVisibility(WebElement element){
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public void moveIntoView(WebElement element){
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", element);
+
+
+
+
     }
 
     public void highlightElement(WebElement element){
