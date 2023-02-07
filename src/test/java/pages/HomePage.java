@@ -84,7 +84,7 @@ public class HomePage extends BasePage {
 
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/header[1]/div[2]/div[1]/div[1]/div[2]/div[1]/ul[1]/li")
-    public List<WebElement>  address;
+    public List<WebElement> address;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/header[1]/div[2]/div[1]/div[1]/div[2]/div[2]/ul[1]/li")
     public List<WebElement> phone;
@@ -95,8 +95,6 @@ public class HomePage extends BasePage {
 
     @FindBy(css = ".footer-copyright")
     public WebElement copyrightUpdates;
-
-
 }
 
 

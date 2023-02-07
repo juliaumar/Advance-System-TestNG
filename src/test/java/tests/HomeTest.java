@@ -199,8 +199,6 @@ public class HomeTest extends BaseTest {
             getDriver().navigate().forward();
             System.out.println(getDriver().getCurrentUrl());
             getDriver().navigate().back();
-
-
         }
     }
 }
