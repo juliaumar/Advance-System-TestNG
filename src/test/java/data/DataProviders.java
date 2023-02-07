@@ -26,5 +26,14 @@ public class DataProviders {
 
         return data;
     }
+    @DataProvider(name = "experts")
+    public static Object[][] experts(){
+        return new Object[][] {
+                {0, "images/resource/team-1.jpg", "Richard Antony", "Founder", "Great explorer of the truth, the\nmaster human happiness."},
+                {1, "images/resource/team-2.jpg", "Charz Cuthbert", "President", "Teachings of the great explors of\ntruth the master builders.."},
+                {2, "images/resource/team-3.jpg", "Eliot Hananiah", "HR Manager", "Circumstances occur in which toil\npain can greatest pleasure."},
+                {3, "images/resource/team-4.jpg", "Daren Eldbridge", "Executive", "The greatest pleasur to take seds\nexample which of us ever."}
+        };
+    }
 
 }
