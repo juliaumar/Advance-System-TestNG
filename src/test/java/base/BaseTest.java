@@ -32,11 +32,10 @@ public class BaseTest {
     public void endReporter(){
         extentManager.closeReport();
     }
-
     @BeforeMethod
     public void setUp(Method method){
         initializeDriver(ConfigReader.readProperty(filePath, "browser"));
-        driver.get(ConfigReader.readProperty(filePath, "url"));
+        driver.get(ConfigReader.readProperty(filePath, "homePage"));
         extentManager.createTestReport(driver, method);
     }
 
@@ -73,6 +72,7 @@ public class BaseTest {
     public WebDriver getDriver(){
         return driver;
     }
+
 
 
 }
