@@ -18,7 +18,7 @@ import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
-    private WebDriver driver;
+    private static WebDriver driver;
     protected ExtentManager extentManager;
     private final String filePath = "src/test/java/config/configuration.properties";
 
@@ -70,7 +70,7 @@ public class BaseTest {
         driver.manage().window().maximize();
     }
 
-    public WebDriver getDriver(){
+    public static WebDriver getDriver(){
         return driver;
     }
 

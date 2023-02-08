@@ -96,7 +96,8 @@ public class HomePage extends BasePage {
     @FindBy(css = ".footer-copyright")
     public WebElement copyrightUpdates;
 
-
+    @FindBy(xpath = "(//a[@href='about.html'])[1]")
+    public WebElement aboutUsLink;
 }
 
 
