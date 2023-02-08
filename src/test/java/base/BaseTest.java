@@ -35,7 +35,7 @@ public class BaseTest {
     @BeforeMethod
     public void setUp(Method method){
         initializeDriver(ConfigReader.readProperty(filePath, "browser"));
-        driver.get(ConfigReader.readProperty(filePath, "homePage"));
+        driver.get(ConfigReader.readProperty(filePath, "url"));
         extentManager.createTestReport(driver, method);
     }
 

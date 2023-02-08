@@ -3,5 +3,13 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
           name="C:/Users/jimmy/Desktop/Selenium/projects/Advance-System-TestNG/src/test">
+        <classes>
+            <class name="tests.HomeTest">
+                <methods>
+                    <include name="test01"/>
+                    <include name="test02"/>
+                </methods>
+            </class>
+        </classes>
     </test>
 </suite>
