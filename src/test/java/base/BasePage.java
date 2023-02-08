@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
 
 public class BasePage {
     protected WebDriver driver;
@@ -74,9 +73,6 @@ public class BasePage {
 
     public void moveIntoView(WebElement element){
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", element);
-
-
-
 
     }
 
