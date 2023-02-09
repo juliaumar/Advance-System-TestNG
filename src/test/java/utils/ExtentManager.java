@@ -37,8 +37,8 @@ public class ExtentManager {
         extentTest = extentReports.createTest(getCustomTestName(method));
 
 
-        extentTest.assignAuthor("Nikolay");
-        extentTest.assignDevice("Window10");
+        extentTest.assignAuthor("Julia");
+        extentTest.assignDevice("MacOS");
     }
 
     //To log a report message
