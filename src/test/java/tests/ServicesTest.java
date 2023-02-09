@@ -25,11 +25,13 @@ public class ServicesTest extends BaseTest {
     public void testASTF30(){
         servicesPage.servicesLink.click();
         for (WebElement division : servicesPage.ourDivisions) {
+            servicesPage.isDisplayed(division);
+            Actions actions = new Actions(getDriver());
+            actions.sendKeys(Keys.PAGE_UP).build().perform();
             servicesPage.click(division);
             System.out.println(getDriver().getTitle());
             getDriver().navigate().back();
-            Actions actions = new Actions(getDriver());
-            actions.sendKeys(Keys.PAGE_UP).build().perform();
+
         }
 
     }
