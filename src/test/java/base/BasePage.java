@@ -99,4 +99,8 @@ public class BasePage {
         highlightElement(element);
         element.click();
     }
+    public void moveElementToTheMiddleOfView(WebElement element) {
+        moveIntoView(element);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", element);
+    }
 }
