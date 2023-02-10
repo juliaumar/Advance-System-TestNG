@@ -94,6 +94,9 @@ public class BasePage {
         }
 
     }
-
-
+    public void clickWithoutMoving(WebElement element){
+        waitForElementClickability(element);
+        highlightElement(element);
+        element.click();
+    }
 }
