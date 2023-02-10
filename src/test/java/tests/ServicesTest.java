@@ -49,7 +49,8 @@ public class ServicesTest extends BaseTest {
 
 
         for (int i = 0; i < servicesPage.navBarLinks.size(); i++) {
-            servicesPage.moveIntoView(servicesPage.ourDivisionsBoucher);
+//            servicesPage.moveIntoView(servicesPage.ourDivisionsBoucher);
+            servicesPage.moveElementToTheMiddleOfView(servicesPage.navBarLinks.get(i));
             servicesPage.clickWithoutMoving(servicesPage.navBarLinks.get(i));
             Assert.assertEquals(servicesPage.navBarLinks.get(i).getAttribute("id"), currentBtn);
         }
