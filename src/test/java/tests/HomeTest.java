@@ -10,9 +10,13 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pages.AboutUsPage;
 import pages.HomePage;
 import utils.SeleniumUtils;
+
+import java.util.List;
 
 
 public class HomeTest extends BaseTest {
@@ -114,6 +118,8 @@ public class HomeTest extends BaseTest {
         homePage.isDisplayed(homePage.wordsFromOurClient);
         for (WebElement el : homePage.TextNameState) {
             homePage.isDisplayed(el);
+            Assert.assertEquals(el.getText(), "John Doe, CA");
+            System.out.println(el.getText());
         }
 
     }
@@ -135,8 +141,13 @@ public class HomeTest extends BaseTest {
 
     @Test(testName = "ASTF-15: Copyright Update")
     public void testASTF15() {
+
+        String expectedText = "Copyright © 2022 Advance Systems LLC. All Rights Reserved.";
+
+
         // String expectedText = "Copyright © 2022 Advance Systems LLC. All Rights Reserved.";
         Assert.assertEquals(homePage.copyrightUpdates.getText(), "Copyright © 2022 Advance Systems LLC. All Rights Reserved.");
+
     }
 
     @Test(testName = "ASTF-6 Second  Page Navigation Bar")
@@ -192,8 +203,8 @@ public class HomeTest extends BaseTest {
     }
 
     @Test(testName = "ASTF-7 Social Media Options")
-    public void testASTF7(){
-        for (WebElement link:homePage.socialLinks) {
+    public void testASTF7() {
+        for (WebElement link : homePage.socialLinks) {
             homePage.isDisplayed(link);
             homePage.click(link);
             getDriver().navigate().forward();
