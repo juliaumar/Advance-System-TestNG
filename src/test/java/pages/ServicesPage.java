@@ -24,4 +24,9 @@ public class ServicesPage extends BasePage {
     @FindBy(xpath = "//div[@class='mixitup-gallery']//a//h4")
     public List<WebElement> ourDivisions;
 
+    @FindBy(xpath = "//ul[@class='boucher']//li")
+    public List<WebElement> navBarLinks;
+
+    @FindBy(className = "boucher-area")
+    public WebElement ourDivisionsBoucher;
 }
