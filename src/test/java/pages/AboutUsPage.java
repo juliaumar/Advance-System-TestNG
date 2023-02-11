@@ -47,4 +47,8 @@ public class AboutUsPage extends BasePage {
         Assert.assertEquals(driver.getCurrentUrl(), socialMedia);
         driver.navigate().back();
     }
+    @FindBy(xpath = "//div[@class='services-block-five col-lg-3 col-md-6 col-sm-12']")
+    public List<WebElement> whyChooseUsSection;
+
+    public String[] whyChooseUsSectionDesc = {"Evaluate Resume", "Interview", "Screening", "Process Done"};
 }
