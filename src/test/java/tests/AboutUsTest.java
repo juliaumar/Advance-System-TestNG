@@ -43,4 +43,24 @@ public class AboutUsTest extends BaseTest {
         }
         Assert.assertEquals(aboutUsPage.whyChooseUsSection.size(), 4);
     }
+
+    @Test(testName = "ASTF-26: About Us page: Why Us section")
+    public void testASTF26() {
+        aboutUsPage.aboutLink.click();
+        aboutUsPage.moveElementToTheMiddleOfView(aboutUsPage.chooseUsSection);
+
+        for (int i = 0; i < aboutUsPage.chooseUsSectionEachEl.size(); i++) {
+            Assert.assertEquals(aboutUsPage.chooseUsSectionEachEl.get(i).findElement(By.cssSelector("h3")).getText(), aboutUsPage.chooseUsSectionHeaders[i]);
+            Assert.assertEquals(aboutUsPage.chooseUsSectionEachEl.get(i).findElement(By.className("text")).getText(), aboutUsPage.chooseUsSectionDesc[i]);
+        }
+
+
+//        System.out.println(aboutUsPage.chooseUsSectionEachEl.get(0).findElement(By.className("text")).getText());
+//        System.out.println(aboutUsPage.chooseUsSectionEachEl.get(0).findElement(By.cssSelector("h3")).getText());
+//        Assert.assertEquals(aboutUsPage.chooseUsSectionEachEl.get(0).findElement(By.cssSelector("h3")));
+
+
+
+
+    }
 }

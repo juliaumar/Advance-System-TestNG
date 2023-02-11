@@ -51,4 +51,17 @@ public class AboutUsPage extends BasePage {
     public List<WebElement> whyChooseUsSection;
 
     public String[] whyChooseUsSectionDesc = {"Evaluate Resume", "Interview", "Screening", "Process Done"};
+
+
+    @FindBy(xpath = "//section[@class='feature-section sp-two']")
+    public WebElement chooseUsSection;
+
+    @FindBy(xpath = "//section[@class='feature-section sp-two']//div[@class='services-block-four col-lg-4 col-md-6 col-sm-12']")
+    public List<WebElement> chooseUsSectionEachEl;
+
+    public String[] chooseUsSectionHeaders = {"On Time Services", "Experienced Team", "Good Track Record"};
+
+    public String[] chooseUsSectionDesc = {"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry."};
 }
