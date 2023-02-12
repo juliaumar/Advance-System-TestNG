@@ -63,5 +63,13 @@ public class AboutUsPage extends BasePage {
 
     public String[] chooseUsSectionDesc = {"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.",
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry."};
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's dummy text."};
+
+    @FindBy(xpath = "//section[@class='about-us sp-two']//div[@class='sec-title centered']")
+    public WebElement pageTitle;
+
+    public String mainHeader = "Welcome to Advance Systems LLC.";
+
+    @FindBy(xpath = "//section[@class='about-us sp-two']//div[@class='author-information']")
+    public WebElement authorInfo;
 }
