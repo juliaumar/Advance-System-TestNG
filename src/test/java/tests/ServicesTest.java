@@ -22,11 +22,12 @@ public class ServicesTest extends BaseTest {
     @BeforeMethod
     public void localSetUp() {
         servicesPage = new ServicesPage(getDriver());
+        servicesPage.servicesLink.click();
     }
 
     @Test(testName = "ASTF-30 Our Services page: Divisions")
     public void testASTF30() {
-        servicesPage.servicesLink.click();
+
         for (WebElement division : servicesPage.ourDivisions) {
             servicesPage.isDisplayed(division);
             Actions actions = new Actions(getDriver());
@@ -44,9 +45,7 @@ public class ServicesTest extends BaseTest {
 
         String currentBtn = "current-btn";
 
-        servicesPage.click(servicesPage.servicesLink);
         servicesPage.click(servicesPage.ourDivisions.get(0));
-
 
         for (int i = 0; i < servicesPage.navBarLinks.size(); i++) {
 //            servicesPage.moveIntoView(servicesPage.ourDivisionsBoucher);
