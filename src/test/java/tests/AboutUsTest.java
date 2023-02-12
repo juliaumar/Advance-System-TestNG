@@ -66,6 +66,7 @@ public class AboutUsTest extends BaseTest {
 
         Assert.assertEquals(aboutUsPage.pageTitle.findElement(By.cssSelector("h2")).getText(), aboutUsPage.mainHeader);
 
+        aboutUsPage.isDisplayed(aboutUsPage.pageTitle.findElement(By.cssSelector("h2")));
         aboutUsPage.isDisplayed(aboutUsPage.authorInfo.findElement(By.cssSelector("h4")));
         aboutUsPage.isDisplayed(aboutUsPage.authorInfo.findElement(By.className("designation")));
     }
