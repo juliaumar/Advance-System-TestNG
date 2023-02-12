@@ -27,21 +27,21 @@ public class BasePage {
 
     public void click(WebElement element){
         waitForElementClickability(element);
-        moveIntoView(element);
+        moveElementToTheMiddleOfView(element);
         highlightElement(element);
         element.click();
     }
 
     public void isDisplayed(WebElement element){
         waitForElementClickability(element);
-        moveIntoView(element);
+        moveElementToTheMiddleOfView(element);
         highlightElement(element);
         element.isDisplayed();
 
     }
     public void isEnabled(WebElement element){
         waitForElementClickability(element);
-        moveIntoView(element);
+        moveElementToTheMiddleOfView(element);
         highlightElement(element);
         element.isEnabled();
 
@@ -49,14 +49,14 @@ public class BasePage {
 
     public void sendKeys(WebElement element, String inputText){
         waitForElementVisibility(element);
-        moveIntoView(element);
+        moveElementToTheMiddleOfView(element);
         highlightElement(element);
         element.sendKeys(inputText);
     }
 
     public String getText(WebElement element){
         waitForElementVisibility(element);
-        moveIntoView(element);
+        moveElementToTheMiddleOfView(element);
         highlightElement(element);
         return element.getText();
     }
@@ -101,6 +101,5 @@ public class BasePage {
     }
     public void moveElementToTheMiddleOfView(WebElement element) {
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'nearest'})", element);
-        highlightElement(element);
     }
 }
