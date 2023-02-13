@@ -72,4 +72,12 @@ public class AboutUsPage extends BasePage {
 
     @FindBy(xpath = "//section[@class='about-us sp-two']//div[@class='author-information']")
     public WebElement authorInfo;
+
+    @FindBy(xpath = "//section[@class='call-to-action-two parallax-one']//div[@class='text-center']//h1")
+    public WebElement headerExperts;
+
+    public String headerExpertsText = "We are Recruitment Experts";
+
+    @FindBy(xpath = "//section[@class='call-to-action-two parallax-one']//a[@class='theme-btn btn-style-two']")
+    public WebElement ourServicesBtn;
 }
