@@ -48,10 +48,16 @@ public class ServicesTest extends BaseTest {
         servicesPage.click(servicesPage.ourDivisions.get(0));
 
         for (int i = 0; i < servicesPage.navBarLinks.size(); i++) {
-//            servicesPage.moveIntoView(servicesPage.ourDivisionsBoucher);
             servicesPage.moveElementToTheMiddleOfView(servicesPage.navBarLinks.get(i));
             servicesPage.clickWithoutMoving(servicesPage.navBarLinks.get(i));
             Assert.assertEquals(servicesPage.navBarLinks.get(i).getAttribute("id"), currentBtn);
         }
+    }
+    @Test(testName = "ASTF-32 Our Division: Contact info")
+    public void testASTF32()  {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(servicesPage.financeLink).build().perform();
+        servicesPage.click(servicesPage.financeLink);
+        servicesPage.setNavBarLinks();
     }
 }
