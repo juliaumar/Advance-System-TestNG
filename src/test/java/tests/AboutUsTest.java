@@ -73,7 +73,7 @@ public class AboutUsTest extends BaseTest {
         aboutUsPage.isDisplayed(aboutUsPage.authorInfo.findElement(By.cssSelector("h4")));
         aboutUsPage.isDisplayed(aboutUsPage.authorInfo.findElement(By.className("designation")));
     }
-    @Test
+    @Test(testName = "ASTF-28: About Us page: Call to action button")
     public void testASTF28() {
 
         aboutUsPage.isDisplayed(aboutUsPage.headerExperts);
