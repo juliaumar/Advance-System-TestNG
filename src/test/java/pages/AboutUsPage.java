@@ -47,4 +47,37 @@ public class AboutUsPage extends BasePage {
         Assert.assertEquals(driver.getCurrentUrl(), socialMedia);
         driver.navigate().back();
     }
+    @FindBy(xpath = "//div[@class='services-block-five col-lg-3 col-md-6 col-sm-12']")
+    public List<WebElement> whyChooseUsSection;
+
+    public String[] whyChooseUsSectionDesc = {"Evaluate Resume", "Interview", "Screening", "Process Done"};
+
+
+    @FindBy(xpath = "//section[@class='feature-section sp-two']")
+    public WebElement chooseUsSection;
+
+    @FindBy(xpath = "//section[@class='feature-section sp-two']//div[@class='services-block-four col-lg-4 col-md-6 col-sm-12']")
+    public List<WebElement> chooseUsSectionEachEl;
+
+    public String[] chooseUsSectionHeaders = {"On Time Services", "Experienced Team", "Good Track Record"};
+
+    public String[] chooseUsSectionDesc = {"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's dummy text."};
+
+    @FindBy(xpath = "//section[@class='about-us sp-two']//div[@class='sec-title centered']")
+    public WebElement pageTitle;
+
+    public String mainHeader = "Welcome to Advance Systems LLC.";
+
+    @FindBy(xpath = "//section[@class='about-us sp-two']//div[@class='author-information']")
+    public WebElement authorInfo;
+
+    @FindBy(xpath = "//section[@class='call-to-action-two parallax-one']//div[@class='text-center']//h1")
+    public WebElement headerExperts;
+
+    public String headerExpertsText = "We are Recruitment Experts";
+
+    @FindBy(xpath = "//section[@class='call-to-action-two parallax-one']//a[@class='theme-btn btn-style-two']")
+    public WebElement ourServicesBtn;
 }
