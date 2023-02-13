@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.AboutUsPage;
+import pages.ServicesPage;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,10 +18,12 @@ import java.util.List;
 
 public class AboutUsTest extends BaseTest {
     AboutUsPage aboutUsPage;
+    ServicesPage servicesPage;
 
     @BeforeMethod
     public void localSetUp() {
         aboutUsPage = new AboutUsPage(getDriver());
+        servicesPage = new ServicesPage(getDriver());
         aboutUsPage.aboutLink.click();
     }
 
@@ -69,5 +72,16 @@ public class AboutUsTest extends BaseTest {
         aboutUsPage.isDisplayed(aboutUsPage.pageTitle.findElement(By.cssSelector("h2")));
         aboutUsPage.isDisplayed(aboutUsPage.authorInfo.findElement(By.cssSelector("h4")));
         aboutUsPage.isDisplayed(aboutUsPage.authorInfo.findElement(By.className("designation")));
+    }
+    @Test
+    public void testASTF28() {
+
+        aboutUsPage.isDisplayed(aboutUsPage.headerExperts);
+        Assert.assertEquals(aboutUsPage.headerExperts.getText(), aboutUsPage.headerExpertsText);
+
+        aboutUsPage.click(aboutUsPage.ourServicesBtn);
+
+        Assert.assertEquals(getDriver().getTitle(), servicesPage.title);
+        System.out.println(getDriver().getTitle() + " | " + servicesPage.title);
     }
 }
