@@ -29,4 +29,6 @@ public class ServicesPage extends BasePage {
 
     @FindBy(className = "boucher-area")
     public WebElement ourDivisionsBoucher;
+
+    public String title = "Advance Systems - Services";
 }
