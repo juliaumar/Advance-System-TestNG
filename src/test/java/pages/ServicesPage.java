@@ -51,6 +51,11 @@ public class ServicesPage extends BasePage {
 
     public String title = "Advance Systems - Services";
 
+   // @FindBy(xpath = "//img[@src='images/resource/division-finance.jpg']")
+  //  public WebElement financeImg;
+
+    //img[@src='images/resource/division-it.jpg']
+
 
 
 }

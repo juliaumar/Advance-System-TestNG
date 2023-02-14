@@ -52,6 +52,7 @@ public class ServicesTest extends BaseTest {
             servicesPage.clickWithoutMoving(servicesPage.navBarLinks.get(i));
             Assert.assertEquals(servicesPage.navBarLinks.get(i).getAttribute("id"), currentBtn);
         }
+
     }
     @Test(testName = "ASTF-32 Our Division: Contact info")
     public void testASTF32()  {

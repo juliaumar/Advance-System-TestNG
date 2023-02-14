@@ -59,9 +59,6 @@ public class AboutUsTest extends BaseTest {
         }
 
 
-//        System.out.println(aboutUsPage.chooseUsSectionEachEl.get(0).findElement(By.className("text")).getText());
-//        System.out.println(aboutUsPage.chooseUsSectionEachEl.get(0).findElement(By.cssSelector("h3")).getText());
-//        Assert.assertEquals(aboutUsPage.chooseUsSectionEachEl.get(0).findElement(By.cssSelector("h3")));
 
     }
     @Test(testName = "ASTF-25: About Us page: Main content")
