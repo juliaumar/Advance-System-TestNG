@@ -35,18 +35,14 @@ public class ServicesTest extends BaseTest {
             servicesPage.click(division);
             System.out.println(getDriver().getTitle());
             getDriver().navigate().back();
-
         }
 
     }
 
     @Test(testName = "ASTF-31 Division page: Mini nav bar")
     public void testASTF31() {
-
         String currentBtn = "current-btn";
-
         servicesPage.click(servicesPage.ourDivisions.get(0));
-
         for (int i = 0; i < servicesPage.navBarLinks.size(); i++) {
             servicesPage.moveElementToTheMiddleOfView(servicesPage.navBarLinks.get(i));
             servicesPage.clickWithoutMoving(servicesPage.navBarLinks.get(i));
