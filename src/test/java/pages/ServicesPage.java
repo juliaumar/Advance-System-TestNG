@@ -30,12 +30,21 @@ public class ServicesPage extends BasePage {
     @FindBy(xpath = "//ul[@class='boucher']//li")
     public List<WebElement> navBarLinks;
 
+    @FindBy(xpath = "//*[@class='image']")
+    public WebElement img;
+
+    @FindBy(xpath = "//*[contains(text(), 'Not only do we provide services to the finance and technology world')]")
+    public WebElement text;
+
     @FindBy(xpath = "//*[text()='Finance']")
     public WebElement financeLink;
     @FindBy(xpath = "//div[@class='contact-info-four']/div[1]")
      public WebElement address;
     @FindBy(xpath = "//div[@class='contact-info-four']/div[2]")
     public WebElement phone;
+
+    @FindBy(xpath = "//*[contains(text(),'Lorem Ipsum is simply dummy')]")
+    public WebElement quote;
 
 
     public void setNavBarLinks() {
@@ -45,16 +54,21 @@ public class ServicesPage extends BasePage {
             isDisplayed(phone);
         }
     }
-
     @FindBy(className = "boucher-area")
     public WebElement ourDivisionsBoucher;
-
     public String title = "Advance Systems - Services";
 
-   // @FindBy(xpath = "//img[@src='images/resource/division-finance.jpg']")
-  //  public WebElement financeImg;
+    public void verifyOurDivisions() {
+        for (WebElement division : ourDivisions) {
+            click(division);
+            System.out.println(driver.getTitle());
+            isDisplayed(img);
+            isDisplayed(text);
+            isDisplayed(quote);
+            driver.navigate().back();
 
-    //img[@src='images/resource/division-it.jpg']
+        }
+    }
 
 
 

@@ -54,11 +54,17 @@ public class ServicesTest extends BaseTest {
         }
 
     }
+
     @Test(testName = "ASTF-32 Our Division: Contact info")
-    public void testASTF32()  {
+    public void testASTF32() {
         Actions actions = new Actions(getDriver());
         actions.moveToElement(servicesPage.financeLink).build().perform();
         servicesPage.click(servicesPage.financeLink);
         servicesPage.setNavBarLinks();
+    }
+
+    @Test(testName = "ASTF-33 Our Divisions should have title, image, text, quote")
+    public void testASTF33() {
+        servicesPage.verifyOurDivisions();
     }
 }
