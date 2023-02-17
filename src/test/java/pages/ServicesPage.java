@@ -39,23 +39,28 @@ public class ServicesPage extends BasePage {
     @FindBy(xpath = "//*[text()='Finance']")
     public WebElement financeLink;
     @FindBy(xpath = "//div[@class='contact-info-four']/div[1]")
-     public WebElement address;
+    public WebElement address;
     @FindBy(xpath = "//div[@class='contact-info-four']/div[2]")
     public WebElement phone;
 
     @FindBy(xpath = "//*[contains(text(),'Lorem Ipsum is simply dummy')]")
     public WebElement quote;
 
+    @FindBy(xpath = "//ul[@class='boucher']//li//a")
+    public WebElement navBarLink;
+
 
     public void setNavBarLinks() {
-        for(WebElement link : navBarLinks) {
-           isDisplayed(link);
-           isDisplayed(address);
+        for (WebElement division : ourDivisions) {
+            click(division);
+            isDisplayed(navBarLink);
+            isDisplayed(address);
             isDisplayed(phone);
+            driver.navigate().back();
         }
     }
-    @FindBy(className = "boucher-area")
-    public WebElement ourDivisionsBoucher;
+
+
     public String title = "Advance Systems - Services";
 
     public void verifyOurDivisions() {
@@ -69,7 +74,6 @@ public class ServicesPage extends BasePage {
 
         }
     }
-
 
 
 }

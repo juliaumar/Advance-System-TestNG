@@ -53,9 +53,6 @@ public class ServicesTest extends BaseTest {
 
     @Test(testName = "ASTF-32 Our Division: Contact info")
     public void testASTF32() {
-        Actions actions = new Actions(getDriver());
-        actions.moveToElement(servicesPage.financeLink).build().perform();
-        servicesPage.click(servicesPage.financeLink);
         servicesPage.setNavBarLinks();
     }
 
